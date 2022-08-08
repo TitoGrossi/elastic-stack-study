@@ -1,0 +1,19 @@
+apm-server:
+  host: 0.0.0.0:8200
+  rum: # real user monitoring -> ajuda a gerar rastreabilidade do frontend pro backend
+    enabled: true
+    allow_origins: ["*"]
+    library_pattern: "node_modules|browser_components|~"
+    exclude_from_grouping: "^/webpack"
+    source_mapping:
+      enabled: true
+      elasticsearch:
+        hosts: ["localhost:9200"]
+        username: "elastic"
+        password: changeme
+        expiration: 5min
+        index_pattern: "apm-*-sourcemap"
+
+    kibana:
+      enables: true
+      host: "kibana:5601"

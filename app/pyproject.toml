@@ -1,0 +1,22 @@
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "TitoGrossi", email = "tito.brossi@gmail.com"},
+]
+dependencies = [
+    "Django>=4.0.5",
+    "elastic-apm>=6.9.1",
+]
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+[tool.pdm]
+
+[tool.pdm.scripts]
+manage = "python blog/manage.py"
+
+[build-system]
+requires = ["pdm-pep517>=0.12.0"]
+build-backend = "pdm.pep517.api"
